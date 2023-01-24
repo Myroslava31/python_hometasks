@@ -4,4 +4,3 @@ alcohol_blacklist = {'Maria Fureiro', 'John Smith', 'Adam Fisher', 'Ann Fox'}
 alco_casino_blacklist = alcohol_blacklist.intersection(casino_blacklist)
 total_blacklist = alco_casino_blacklist.intersection(poker_blacklist)
 print(total_blacklist)
-
