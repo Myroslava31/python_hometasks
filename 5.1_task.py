@@ -1,15 +1,8 @@
 import random
 
-left_operand = []
-right_operand = []
-action_element = []
-
-for i in range(101):
-    left_operand.insert(0, (random.randint(0, 100)))
-    right_operand.insert(0, (random.randint(0, 100)))
-    action_element.insert(0, (random.randint(1, 3)))
-
-my_list = list(zip(left_operand, right_operand, action_element))
+my_list = []
+for _ in range(100):
+    my_list.append(((random.randint(0, 100)), (random.randint(0, 100)), (random.randint(1, 3))))
 print(my_list)
 import os
 import pickle
