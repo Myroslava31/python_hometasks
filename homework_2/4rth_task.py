@@ -3,4 +3,3 @@ vegetarians = ['Kate', 'Gary', 'Ann', 'Monica']
 vegetarians.extend(omnivores)
 guests = vegetarians
 print(guests)
-
