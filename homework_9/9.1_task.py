@@ -1,6 +1,7 @@
 class Nova_poshta:
 
     def __init__(self, number: int, address: dict, type: str):
+        """Type can be 'office' or 'point'"""
         self.__number = number
         self.__address = address
         self.__type = type
@@ -52,6 +53,7 @@ class Nova_poshta:
 
     @staticmethod
     def calculate_price(weight: float, price = 5) -> float:
+        """Calculates price of parcel. Price for kilo is fixed number and equals 5 gryvnas"""
         price = 40 + (weight * price)
         return price
 
