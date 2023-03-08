@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
-class Mammal(ABC)
-    def __init__(self, hart: str, hair: bool, smart: bool, feed_my_children: str, rise_my_children, food: str, place: str):
+class Mammal(ABC):
+    def __init__(self):
         self._hart = '4 chambers'
         self._hair = True
         self._smart = True
@@ -9,10 +9,10 @@ class Mammal(ABC)
         self._food = None
         self.place = None
     @abstractmethod
-    def carrying_about_children(self, feed_my_children, rise_my_children):...
+    def carrying_about_children(self):...
 
     @abstractmethod
-    def eat(self, food):...
+    def eat(self):...
 
     @abstractmethod
-    def live(self, place):...
+    def live(self):...
