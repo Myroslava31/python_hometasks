@@ -8,11 +8,11 @@ class Employee:
         self.__salary = salary
 
     @classmethod
-    def date_of_birth(cls, name_surname: list, date_of_birth: date, position: str, salary: int):
+    def creation_with_date(cls, name_surname: list, date_of_birth: date, position: str, salary: int):
         """If you have date of birth instead of age this function calculates the age"""
         today = date.today()
         age = today.year - date_of_birth.year - ((today.month, today.day) < (date_of_birth.month, date_of_birth.day))
-        return f'{" ".join(name_surname)} is {age}. {" ".join(name_surname)} is {position} with salary {salary}$'
+        return cls(name_surname, age, position, salary)
 
     @property
     def name_surname(self):
@@ -33,7 +33,7 @@ class Employee:
 
     @age.setter
     def age(self, new_age: int):
-        if new_age > 18:
+        if 18 < new_age < 120:
             self.__age = new_age
         else:
             raise TypeError("We can't hire non adult")
@@ -52,10 +52,12 @@ class Employee:
 
     @position.setter
     def position(self, new_position: str):
-        if isinstance(new_position, str):
-            self.__position = new_position
-        else:
-            raise TypeError("Only string is supported")
+        positions = ['developer', 'QA', 'manager', 'analyst', 'accountant', 'sales', 'administrator']
+        for position in positions:
+            if position == new_position:
+                self.__position = new_position
+        if self.__position != new_position:
+            raise TypeError("Only positions of developer, QA, manager, analyst, accountant, sales, administrator are supported")
 
     @salary.setter
     def salary(self, new_salary):
@@ -83,3 +85,4 @@ class Employee:
                 return "This person doesn't correspond to the requirements"
         else:
             return 'Please enter two integer numbers from 1 to 100'
+
