@@ -1,4 +1,4 @@
-class Nova_poshta:
+class NovaPoshta:
 
     def __init__(self, number: int, address: dict, type: str):
         """Type can be 'office' or 'point'"""
@@ -11,10 +11,10 @@ class Nova_poshta:
 
     @number.setter
     def number(self, new_number: int):
-        if isinstance(new_number, int) and new_number < 100000:
+        if isinstance(new_number, int) and 0 < new_number < 100000:
             self.__number = new_number
         else:
-            raise TypeError('Only integer not more than 100000 is supported')
+            raise TypeError('Only integer in range 0-100000 is supported')
 
     @number.deleter
     def number(self):
@@ -41,9 +41,7 @@ class Nova_poshta:
 
     @type.setter
     def type(self, new_type: str):
-        if new_type == 'office':
-            self.__type = new_type
-        elif new_type == 'point':
+        if new_type == 'office' or new_type == 'point':
             self.__type = new_type
         else:
             raise TypeError("Only 'office' and 'point' values are supported")
