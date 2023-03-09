@@ -13,5 +13,6 @@ class Vombatiformes(Diprotodontia):
     def live(self):
         return f"We live in {self._place}"
 
-    def find_relatives
+    @staticmethod
+    def find_relatives():
         return f'A lot of my family members are extinct'
