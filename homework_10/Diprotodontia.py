@@ -10,4 +10,4 @@ class Diprotodontia(Marsupial):
         return f'We are {self._food}'
 
     def live(self):
-        return f'We live in {self._place}'
+        return f"We live in {self._place} and don't live in water"
