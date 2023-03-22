@@ -5,12 +5,7 @@ class Train:
         self.__wagon = dict()
 
     def __len__(self):
-        wagon_list = []
-        for item in self.__wagon:
-            if item == 0:
-                continue
-            else:
-                wagon_list.append(item)
+        wagon_list = list(self.__wagon)[1:]
         print(wagon_list)
         return len(wagon_list)
 
